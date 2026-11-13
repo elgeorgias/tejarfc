@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light;
+  --red: #d71920;
+  --ink: #1d1d1b;
+  --muted: #73736e;
+  --line: #e7e5df;
+  --paper: #f6f5f2;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: min(100% - 32px, 760px);
+  margin: 0 auto;
+}
+
+.club-header {
+  display: grid;
+  justify-items: center;
+  padding: 46px 16px 36px;
+  text-align: center;
+}
+
+.crest {
+  display: block;
+  width: 184px;
+  height: 184px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: var(--white);
+  object-fit: contain;
+}
+
+.club-header h1 {
+  margin: 0;
+  font-size: clamp(26px, 6vw, 36px);
+  letter-spacing: -0.04em;
+}
+
+.club-header p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.schedule {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.schedule h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.schedule-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.calendar-download {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.calendar-download:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.field-link {
+  color: inherit;
+  text-decoration-color: #c9c7c1;
+  text-underline-offset: 3px;
+}
+
+.field-link:hover {
+  color: var(--red);
+  text-decoration-color: currentColor;
+}
+
+.fixtures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fixture {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fixture-date {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  align-content: center;
+  justify-items: center;
+  border-radius: 6px;
+  background: #f9eded;
+  color: var(--red);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.fixture-date span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fixture-date span:last-child {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.fixture-details {
+  min-width: 0;
+}
+
+.fixture-teams {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.fixture-teams strong {
+  color: var(--red);
+}
+
+.versus {
+  color: #aaa9a4;
+}
+
+.fixture-details p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.round {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.rest .fixture-date {
+  background: #f0efeb;
+  color: var(--muted);
+}
+
+.rest .fixture-teams strong {
+  color: var(--ink);
+}
+
+.schedule-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.page-footer {
+  padding: 22px 0 30px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(100% - 24px, 760px);
+  }
+
+  .club-header {
+    padding: 30px 12px 25px;
+  }
+
+  .crest {
+    width: 156px;
+    height: 156px;
+    margin-bottom: 15px;
+  }
+
+  .schedule {
+    padding: 19px 15px;
+  }
+
+  .schedule-heading {
+    align-items: flex-start;
+  }
+
+  .calendar-download {
+    min-height: 34px;
+    gap: 5px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .fixture {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .fixture-date {
+    width: 42px;
+    height: 44px;
+  }
+
+  .fixture-teams {
+    gap: 5px;
+    font-size: 13px;
+  }
+
+  .round {
+    grid-column: 2;
+    margin-top: -6px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
